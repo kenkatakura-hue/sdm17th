@@ -1,0 +1,104 @@
+% 慶應義塾大学大学院 SDM研究科 修士論文テンプレート
+% Compiler: XeLaTeX
+
+\documentclass[12pt,a4paper,openany]{bxjsreport}
+\usepackage{xeCJK}
+\setCJKmainfont{IPAexMincho}
+\setCJKsansfont{IPAexGothic}
+
+% パッケージ
+\usepackage{graphicx}
+\usepackage{amsmath,amssymb}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{hyperref}
+\usepackage{geometry}
+\geometry{top=25mm, bottom=25mm, left=25mm, right=25mm}
+
+% ハイパーリンク設定
+\hypersetup{
+    colorlinks=true,
+    linkcolor=black,
+    citecolor=black,
+    urlcolor=blue
+}
+
+\begin{document}
+
+% ========== 前付け ==========
+\pagenumbering{roman}
+
+% 表紙
+\input{frontmatter/titlepage}
+
+% 要旨
+\input{frontmatter/abstract}
+\input{frontmatter/abstract-en}
+
+% 目次
+\tableofcontents
+\clearpage
+
+% ========== 本文 ==========
+\pagenumbering{arabic}
+
+% 第1章 序論
+\chapter{序論}
+\input{chapters/1_intro/1_1_background}
+\input{chapters/1_intro/1_2_objective}
+\input{chapters/1_intro/1_3_novelty}
+\input{chapters/1_intro/1_4_structure}
+
+% 第2章 先行研究
+\chapter{先行研究}
+\input{chapters/2_literature/2_1_domain_a}
+\input{chapters/2_literature/2_2_domain_b}
+\input{chapters/2_literature/2_3_domain_c}
+\input{chapters/2_literature/2_4_positioning}
+\input{chapters/2_literature/2_5_summary}
+
+% 第3章 予備調査
+\chapter{予備調査}
+\input{chapters/3_preliminary/3_1_purpose}
+\input{chapters/3_preliminary/3_2_method}
+\input{chapters/3_preliminary/3_3_result}
+\input{chapters/3_preliminary/3_4_summary}
+
+% 第4章 提案手法
+\chapter{提案手法}
+\input{chapters/4_proposal/4_1_overview}
+\input{chapters/4_proposal/4_2_design}
+\input{chapters/4_proposal/4_3_detail}
+\input{chapters/4_proposal/4_4_summary}
+
+% 第5章 評価実験
+\chapter{評価実験}
+\input{chapters/5_evaluation/5_1_purpose}
+\input{chapters/5_evaluation/5_2_method}
+\input{chapters/5_evaluation/5_3_result}
+\input{chapters/5_evaluation/5_4_validation}
+\input{chapters/5_evaluation/5_5_summary}
+
+% 第6章 考察
+\chapter{考察}
+\input{chapters/6_discussion/6_1_findings}
+\input{chapters/6_discussion/6_2_limitations}
+\input{chapters/6_discussion/6_3_summary}
+
+% 第7章 結論
+\chapter{結論}
+\input{chapters/7_conclusion/7_1_conclusion}
+\input{chapters/7_conclusion/7_2_future}
+
+% ========== 後付け ==========
+% 謝辞
+\input{backmatter/acknowledgement}
+
+% 参考文献
+\input{refs}
+
+% 付録
+\appendix
+\input{appendices/appendixA}
+
+\end{document}
