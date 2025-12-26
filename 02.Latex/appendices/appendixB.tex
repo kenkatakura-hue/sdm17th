@@ -1,0 +1,33 @@
+\section*{データセット詳細}
+
+本付録では、NekoNetの学習・評価に使用したデータセットの詳細を示す。
+
+\subsection*{Oxford-IIIT Pet Dataset}
+
+\begin{table}[htbp]
+\centering
+\caption{Oxford-IIIT Petデータセットの内訳}
+\begin{tabular}{lrr}
+\toprule
+カテゴリ & 画像数 & 割合 \\
+\midrule
+猫（12品種） & 2,371 & 32.3\% \\
+犬（25品種） & 4,978 & 67.7\% \\
+\midrule
+合計 & 7,349 & 100\% \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection*{COCO Dataset（猫カテゴリ抽出）}
+
+COCO 2017から猫カテゴリ（category\_id: 17）のみを抽出して使用した。
+
+\begin{itemize}
+\item 学習用：10,234画像（12,891インスタンス）
+\item 検証用：2,204画像（2,343インスタンス）
+\end{itemize}
+
+\subsection*{自作データセット}
+
+SNSおよびフリー素材サイトから収集した猫画像5,000枚に対し、バウンディングボックスアノテーションを付与した。アノテーションは2名の作業者が実施し、IoU 0.7以上の一致を確認した。

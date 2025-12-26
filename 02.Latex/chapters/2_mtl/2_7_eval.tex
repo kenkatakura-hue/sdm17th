@@ -1,0 +1,36 @@
+提案手法の評価結果について述べる。
+
+\subsection{評価指標}
+
+\begin{itemize}
+\item 認識精度：mAP@0.5, mAP@0.5:0.95
+\item 処理速度：FPS（Frames Per Second）
+\item モデルサイズ：パラメータ数、ファイルサイズ
+\end{itemize}
+
+\subsection{比較手法}
+
+YOLOv8-nano、MobileNet-SSD、EfficientDet-D0を比較対象とした。
+
+\subsection{結果}
+
+\begin{table}[htbp]
+\centering
+\caption{評価結果}
+\begin{tabular}{lrrr}
+\toprule
+手法 & mAP@0.5 & FPS & サイズ \\
+\midrule
+YOLOv8-nano & 82.1\% & 45 & 6.3MB \\
+MobileNet-SSD & 78.4\% & 52 & 8.1MB \\
+EfficientDet-D0 & 85.3\% & 28 & 15.2MB \\
+\textbf{NekoNet} & \textbf{92.6\%} & \textbf{48} & \textbf{7.8MB} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+NekoNetは全ての比較手法を上回る精度を達成しつつ、処理速度も30FPS以上の要求を満たした。
+
+\subsection{統計的検定}
+
+McNemar検定の結果、NekoNetと各比較手法の間に有意差が認められた（$p < 0.01$）。

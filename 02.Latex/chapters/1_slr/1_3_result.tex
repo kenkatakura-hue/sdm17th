@@ -1,0 +1,23 @@
+初期検索により250件の文献が同定された。重複除去後185件となり、タイトル・アブストラクトスクリーニングで46件に絞られた。最終的にフルテキストレビューを経て23件が分析対象として選定された（図\ref{fig:prisma}）。
+
+\begin{figure}[htbp]
+\centering
+\fbox{\parbox{0.8\textwidth}{\centering PRISMAフローダイアグラム\\（検索250件 → 最終23件）}}
+\caption{文献選定プロセス}
+\label{fig:prisma}
+\end{figure}
+
+\subsection{手法の分類}
+
+選定された23件の文献で提案された手法は、以下の4カテゴリに分類された。
+
+\begin{enumerate}
+\item CNN系（10件）：ResNet、VGG等の汎用アーキテクチャを適用
+\item 物体検出系（5件）：YOLO、Faster R-CNN等を猫検出に適用
+\item セグメンテーション系（6件）：猫の輪郭抽出に特化
+\item ハイブリッド系（2件）：複数手法の組み合わせ
+\end{enumerate}
+
+\subsection{性能比較}
+
+報告された認識精度は62.3\%から94.7\%の範囲であり、平均は81.2\%であった。処理速度は1フレームあたり12msから340msと大きなばらつきが見られた。

@@ -1,0 +1,45 @@
+\section*{ハイパーパラメータ設定}
+
+本付録では、NekoNetの学習に使用したハイパーパラメータを示す。
+
+\subsection*{学習パラメータ}
+
+\begin{table}[htbp]
+\centering
+\caption{学習ハイパーパラメータ}
+\begin{tabular}{ll}
+\toprule
+パラメータ & 値 \\
+\midrule
+バッチサイズ & 32 \\
+初期学習率 & 0.001 \\
+最小学習率 & 1e-6 \\
+エポック数 & 100 \\
+オプティマイザ & AdamW \\
+Weight Decay & 0.05 \\
+学習率スケジューラ & Cosine Annealing \\
+ウォームアップエポック & 5 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection*{データ拡張}
+
+\begin{table}[htbp]
+\centering
+\caption{データ拡張設定}
+\begin{tabular}{ll}
+\toprule
+拡張手法 & パラメータ \\
+\midrule
+ランダムリサイズ & 0.5〜1.5倍 \\
+水平反転 & 確率0.5 \\
+色調変換 & 彩度・明度 $\pm$0.2 \\
+Mosaic拡張 & 確率0.5 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection*{損失関数の重み}
+
+$\lambda_1 = 1.0$（分類損失）、$\lambda_2 = 5.0$（ボックス損失）、$\lambda_3 = 0.5$（アテンション損失）

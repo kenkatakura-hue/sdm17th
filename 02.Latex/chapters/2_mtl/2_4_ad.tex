@@ -1,0 +1,28 @@
+NekoNetのアーキテクチャ設計について述べる。
+
+\subsection{設計方針}
+
+SLRで得られた知見に基づき、以下の設計方針を採用する。
+
+\begin{enumerate}
+\item 猫の形態学的特徴（耳・目・尾）に着目したアテンション機構
+\item 軽量化のためのDepthwise Separable Convolutionの採用
+\item マルチスケール特徴抽出によるサイズ不変性の確保
+\end{enumerate}
+
+\subsection{全体アーキテクチャ}
+
+NekoNetは以下の3つの主要コンポーネントから構成される（図\ref{fig:arch}）。
+
+\begin{figure}[htbp]
+\centering
+\fbox{\parbox{0.8\textwidth}{\centering NekoNetアーキテクチャ図\\Backbone → Neko Attention → Detection Head}}
+\caption{NekoNetアーキテクチャ}
+\label{fig:arch}
+\end{figure}
+
+\begin{enumerate}
+\item \textbf{Backbone}：MobileNetV3をベースとした特徴抽出器
+\item \textbf{Neko Attention Module}：猫特有部位に着目するアテンション機構
+\item \textbf{Detection Head}：位置・クラス予測を行う出力層
+\end{enumerate}
