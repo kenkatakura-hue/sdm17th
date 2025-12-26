@@ -13,7 +13,7 @@ Menu → Compiler → XeLaTeX
 ## フォルダ構造
 
 ```
-thesis/
+latex/
 ├── main.tex                        # メインファイル（これをコンパイル）
 ├── refs.tex                        # 参考文献
 ├── README.md                       # このファイル
