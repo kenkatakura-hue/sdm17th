@@ -25,6 +25,12 @@
     urlcolor=blue
 }
 
+% 図表キャプション用（日本語対応）
+\renewcommand{\figurename}{図}
+\renewcommand{\tablename}{表}
+\renewcommand{\listfigurename}{図目次}
+\renewcommand{\listtablename}{表目次}
+
 \begin{document}
 
 % ========== 前付け ==========
@@ -39,6 +45,14 @@
 
 % 目次
 \tableofcontents
+\clearpage
+
+% 図目次
+\listoffigures
+\clearpage
+
+% 表目次
+\listoftables
 \clearpage
 
 % ========== 本文 ==========
