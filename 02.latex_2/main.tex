@@ -32,16 +32,31 @@
 \renewcommand{\listfigurename}{図目次}
 \renewcommand{\listtablename}{表目次}
 
-% 章・節のスタイル設定（線なし、間隔調整）
+% ========== 見出しスタイル設定 ==========
+% 見出し1: 章（第1章 タイトル）
 \titleformat{\chapter}[block]
   {\normalfont\Large\bfseries}
   {第\thechapter 章}{1em}{}
 \titlespacing*{\chapter}{0pt}{0pt}{20pt}
 
+% 見出し2: 節（1.1 タイトル）
 \titleformat{\section}
   {\normalfont\large\bfseries}
   {\thesection}{1em}{}
 \titlespacing*{\section}{0pt}{20pt}{10pt}
+
+% 見出し3: 項（1.1.1 タイトル）
+\titleformat{\subsection}
+  {\normalfont\normalsize\bfseries}
+  {\thesubsection}{1em}{}
+\titlespacing*{\subsection}{0pt}{15pt}{8pt}
+
+% 見出し4: 小項（(1) タイトル）
+\renewcommand{\thesubsubsection}{(\arabic{subsubsection})}
+\titleformat{\subsubsection}
+  {\normalfont\normalsize\bfseries}
+  {\thesubsubsection}{1em}{}
+\titlespacing*{\subsubsection}{0pt}{12pt}{6pt}
 
 \begin{document}
 
