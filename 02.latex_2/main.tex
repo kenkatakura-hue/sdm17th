@@ -13,6 +13,7 @@
 \usepackage{longtable}
 \usepackage{hyperref}
 \usepackage{geometry}
+\usepackage{titlesec}
 \geometry{top=25mm, bottom=25mm, left=25mm, right=25mm}
 
 % ハイパーリンク設定 + PDFプロパティ（KOARA提出要件）
@@ -30,6 +31,17 @@
 \renewcommand{\tablename}{表}
 \renewcommand{\listfigurename}{図目次}
 \renewcommand{\listtablename}{表目次}
+
+% 章・節のスタイル設定（線なし、間隔調整）
+\titleformat{\chapter}[block]
+  {\normalfont\Large\bfseries}
+  {第\thechapter 章}{1em}{}
+\titlespacing*{\chapter}{0pt}{0pt}{20pt}
+
+\titleformat{\section}
+  {\normalfont\large\bfseries}
+  {\thesection}{1em}{}
+\titlespacing*{\section}{0pt}{20pt}{10pt}
 
 \begin{document}
 
