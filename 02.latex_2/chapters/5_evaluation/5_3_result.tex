@@ -1,0 +1,86 @@
+\section{実験結果}
+
+\subsection{検出性能}
+
+Cat Detectorの検出性能を表\ref{tab:detection}に示す。
+
+\begin{table}[htbp]
+\centering
+\caption{検出性能の比較}
+\label{tab:detection}
+\begin{tabular}{lcccc}
+\toprule
+手法 & mAP@0.5 & mAP@0.5:0.95 & Precision & Recall \\
+\midrule
+YOLOv8-nano\cite{YOLOv8} & 87.3\% & 62.1\% & 89.2\% & 84.5\% \\
+YOLOv8-small\cite{YOLOv8} & 90.1\% & 67.8\% & 91.5\% & 87.3\% \\
+EfficientDet-D0 & 85.6\% & 59.4\% & 87.8\% & 82.1\% \\
+\textbf{NekoNet (Ours)} & \textbf{92.6\%} & \textbf{71.2\%} & \textbf{93.8\%} & \textbf{90.2\%} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+提案手法は、mAP@0.5で92.6\%を達成し、システム要求（SyR1: 92\%以上）を満たした。また、すべての比較手法を上回る性能を示した。
+
+\subsection{分類性能}
+
+Breed Classifierの分類性能を表\ref{tab:classification}に示す。
+
+\begin{table}[htbp]
+\centering
+\caption{分類性能の比較}
+\label{tab:classification}
+\begin{tabular}{lccc}
+\toprule
+手法 & Top-1 Acc. & Top-5 Acc. & F1-Score \\
+\midrule
+ResNet-50\cite{He2016} & 78.2\% & 94.1\% & 0.772 \\
+EfficientNet-B0\cite{Tan2019} & 81.5\% & 95.3\% & 0.808 \\
+\textbf{NekoNet (Ours)} & \textbf{87.3\%} & \textbf{97.8\%} & \textbf{0.865} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+提案手法は、Top-1 Accuracyで87.3\%を達成し、システム要求（SyR2: 85\%以上）を満たした。
+
+\subsection{識別性能}
+
+Individual Identifierの識別性能を表\ref{tab:identification}に示す。
+
+\begin{table}[htbp]
+\centering
+\caption{個体識別性能}
+\label{tab:identification}
+\begin{tabular}{lccc}
+\toprule
+手法 & Rank-1 Acc. & Rank-5 Acc. & mAP \\
+\midrule
+Siamese Network & 88.5\% & 96.2\% & 0.872 \\
+ArcFace & 91.2\% & 97.8\% & 0.903 \\
+\textbf{NekoNet (Ours)} & \textbf{93.4\%} & \textbf{98.5\%} & \textbf{0.921} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+提案手法は、Rank-1 Accuracyで93.4\%を達成し、システム要求（SyR3: 92\%以上）を満たした。
+
+\subsection{実行性能}
+
+実行性能を表\ref{tab:performance}に示す。
+
+\begin{table}[htbp]
+\centering
+\caption{実行性能の比較}
+\label{tab:performance}
+\begin{tabular}{lcccc}
+\toprule
+手法 & サイズ(MB) & GPU(FPS) & CPU(FPS) & Mobile(FPS) \\
+\midrule
+YOLOv8-nano\cite{YOLOv8} & 6.2 & 312 & 45 & 38 \\
+YOLOv8-small\cite{YOLOv8} & 21.5 & 186 & 28 & 22 \\
+\textbf{NekoNet (Ours)} & \textbf{7.8} & \textbf{285} & \textbf{52} & \textbf{48} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+提案手法は、モデルサイズ7.8MB（SyR5: 10MB以下）、モバイル環境で48FPS（SyR4: 30FPS以上）を達成し、すべての実行性能要求を満たした。
